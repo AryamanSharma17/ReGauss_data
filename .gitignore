@@ -1,3 +1,10 @@
+Data/
+both.exr
+both.png
+left.exr
+right.exr
+lego_both.exr
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
