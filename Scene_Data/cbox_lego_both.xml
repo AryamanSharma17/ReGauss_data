@@ -17,7 +17,7 @@
         <float name="focus_distance" value="1000"/>
         <float name="fov" value="50"/>
         <transform name="to_world">
-            <lookat origin="0, 0, 50"
+            <lookat origin="20, 0, 20"
                     target="0, 0, 0"
                     up    ="0,  1,  0"/>
         </transform>
@@ -104,8 +104,14 @@
 
     <bsdf type="twosided" id="green">
         <bsdf type="diffuse">
-            <rgb name="reflectance" value="0.105421, 0.37798, 0.076425"/>
-        </bsdf>
+			<texture type="bitmap" name="reflectance">
+				<string name="filename" value="textures/green_wallpaper.jpg"/>
+				<string name="wrap_mode" value="mirror"/>
+				<transform name="to_uv">
+					<rotate x="1" angle="0"/>
+				</transform>
+			</texture>
+		</bsdf>
     </bsdf>
 
     <bsdf type="twosided" id="red">
@@ -161,7 +167,7 @@
 	<bsdf type="twosided" id="disktex">
 		<bsdf type="diffuse" >
 			<texture type="bitmap" name="reflectance">
-				<string name="filename" value="textures/stump.jpg"/>
+				<string name="filename" value="textures/wood2.jpg"/>
 				<string name="wrap_mode" value="mirror"/>
 			</texture>
 		</bsdf>
@@ -3745,7 +3751,7 @@
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
-    <!-- lego -->
+    
 
 
 </scene>
