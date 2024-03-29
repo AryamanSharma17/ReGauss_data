@@ -17,7 +17,7 @@
         <float name="focus_distance" value="1000"/>
         <float name="fov" value="50"/>
         <transform name="to_world">
-            <lookat origin="20, 0, 20"
+            <lookat origin="0, 0, 50"
                     target="0, 0, 0"
                     up    ="0,  1,  0"/>
         </transform>
@@ -102,16 +102,48 @@
         </bsdf>
     </bsdf>
 
-    <bsdf type="twosided" id="green">
+    <bsdf type="twosided" id="greenw">
         <bsdf type="diffuse">
 			<texture type="bitmap" name="reflectance">
 				<string name="filename" value="textures/green_wallpaper.jpg"/>
 				<string name="wrap_mode" value="mirror"/>
 				<transform name="to_uv">
+					<scale value="0.5"/>
 					<rotate x="1" angle="0"/>
 				</transform>
 			</texture>
 		</bsdf>
+    </bsdf>
+	
+    <bsdf type="twosided" id="redw">
+        <bsdf type="diffuse">
+			<texture type="bitmap" name="reflectance">
+				<string name="filename" value="textures/red_wallpaper.jpg"/>
+				<string name="wrap_mode" value="mirror"/>
+				<transform name="to_uv">
+					<scale value="0.5"/>
+					<rotate x="1" angle="0"/>
+				</transform>
+			</texture>
+		</bsdf>
+    </bsdf>
+	
+    <bsdf type="twosided" id="bluew">
+        <bsdf type="diffuse">
+			<texture type="bitmap" name="reflectance">
+				<string name="filename" value="textures/blue_wallpaper.jpg"/>
+				<string name="wrap_mode" value="mirror"/>
+				<transform name="to_uv">
+					<scale value="0.5"/>
+					<rotate x="1" angle="0"/>
+				</transform>
+			</texture>
+		</bsdf>
+    </bsdf>
+	<bsdf type="twosided" id="green">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.105421, 0.37798, 0.076425"/>
+        </bsdf>
     </bsdf>
 
     <bsdf type="twosided" id="red">
@@ -177,42 +209,42 @@
 
     <!-- Shapes -->
 
-    <shape type="obj" id="floor">
-        <string name="filename" value="meshes/cbox_floor.obj"/>
+    <shape type="rectangle" id="floor">
         <transform name="to_world">
             <scale value="15"/>
-        </transform>            
-        <ref id="white"/>
-    </shape>
-
-    <shape type="obj" id="ceiling">
-        <string name="filename" value="meshes/cbox_ceiling.obj"/>
-        <transform name="to_world">
-            <scale value="15"/>
+            <rotate x="1" angle="90"/>
+            <translate x="0" y="-15.0" z="0"/>
         </transform>
         <ref id="white"/>
     </shape>
-
-    <shape type="obj" id="back">
-        <string name="filename" value="meshes/cbox_back.obj"/>
+    <shape type="rectangle" id = "top">
         <transform name="to_world">
             <scale value="15"/>
+            <rotate x="1" angle="-90"/>
+            <translate x="0" y="15.0" z="0"/>
         </transform>
         <ref id="white"/>
     </shape>
-
-    <shape type="obj" id="greenwall">
-        <string name="filename" value="meshes/cbox_greenwall.obj"/>
+    <shape type="rectangle" id = "backwall">
         <transform name="to_world">
             <scale value="15"/>
+            <translate x="0" y="0.0" z="-15.0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+    <shape type="rectangle" id = "green_wall">
+        <transform name="to_world">
+            <scale value="15"/>
+            <rotate y="1" angle="-90"/>
+            <translate x="-15.0" y="0.0" z="0"/>
         </transform>
         <ref id="green"/>
     </shape>
-
-    <shape type="obj" id="redwall">
-        <string name="filename" value="meshes/cbox_redwall.obj"/>
+     <shape type="rectangle" id = "red_wall">
         <transform name="to_world">
             <scale value="15"/>
+            <rotate y="1" angle="90"/>
+            <translate x="15.1" y="0.0" z="0"/>
         </transform>
         <ref id="red"/>
     </shape>

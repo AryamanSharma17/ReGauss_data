@@ -162,6 +162,19 @@
     
     <!-- Light -->
 
+    <shape type="obj" id="light_left">
+        <string name="filename" value="meshes/cbox_luminaire.obj"/>
+        <transform name="to_world">
+            <translate x="-1" y="0.5" z="1"/>
+            <scale value ="10"/>
+        </transform>
+        <ref id="white"/>
+        <emitter type="area">
+            <rgb name="radiance" value="100"/>
+        </emitter>
+    </shape>
+  
+    
     <shape type="obj" id="light_right">
         <string name="filename" value="meshes/cbox_luminaire.obj"/>
         <transform name="to_world">
@@ -225,7 +238,7 @@
             <rotate y="1" angle="-90"/>
             <translate x="-15.0" y="0.0" z="0"/>
         </transform>
-        <ref id="green"/>
+        <ref id="greenw"/>
     </shape>
      <shape type="rectangle" id = "red_wall">
         <transform name="to_world">
@@ -233,7 +246,7 @@
             <rotate y="1" angle="90"/>
             <translate x="15.1" y="0.0" z="0"/>
         </transform>
-        <ref id="red"/>
+        <ref id="redw"/>
     </shape>
 
     <shape type="cylinder">
