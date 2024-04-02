@@ -102,53 +102,21 @@
         </bsdf>
     </bsdf>
 
-    <bsdf type="twosided" id="greenw">
+    <bsdf type="twosided" id="red">
         <bsdf type="diffuse">
-			<texture type="bitmap" name="reflectance">
-				<string name="filename" value="textures/green_wallpaper.jpg"/>
-				<string name="wrap_mode" value="mirror"/>
-				<transform name="to_uv">
-					<scale value="0.5"/>
-					<rotate x="1" angle="0"/>
-				</transform>
-			</texture>
-		</bsdf>
-    </bsdf>
-	
-    <bsdf type="twosided" id="redw">
-        <bsdf type="diffuse">
-			<texture type="bitmap" name="reflectance">
-				<string name="filename" value="textures/red_wallpaper.jpg"/>
-				<string name="wrap_mode" value="mirror"/>
-				<transform name="to_uv">
-					<scale value="0.5"/>
-					<rotate x="1" angle="0"/>
-				</transform>
-			</texture>
-		</bsdf>
-    </bsdf>
-	
-    <bsdf type="twosided" id="bluew">
-        <bsdf type="diffuse">
-			<texture type="bitmap" name="reflectance">
-				<string name="filename" value="textures/blue_wallpaper.jpg"/>
-				<string name="wrap_mode" value="mirror"/>
-				<transform name="to_uv">
-					<scale value="0.5"/>
-					<rotate x="1" angle="0"/>
-				</transform>
-			</texture>
-		</bsdf>
-    </bsdf>
-	<bsdf type="twosided" id="green">
-        <bsdf type="diffuse">
-            <rgb name="reflectance" value="0.105421, 0.37798, 0.076425"/>
+            <rgb name="reflectance" value="0.885809, 0.0430135, 0.0443706"/>
         </bsdf>
     </bsdf>
 
-    <bsdf type="twosided" id="red">
+	<bsdf type="twosided" id="green">
         <bsdf type="diffuse">
-            <rgb name="reflectance" value="0.570068, 0.0430135, 0.0443706"/>
+            <rgb name="reflectance" value="0.105421, 0.698859, 0.076425"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="twosided" id="blue">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.0430135, 0.0443706, 0.666422"/>
         </bsdf>
     </bsdf>
 
@@ -170,7 +138,7 @@
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="100"/>
+            <rgb name="radiance" value="50"/>
         </emitter>
     </shape>
   
@@ -183,7 +151,7 @@
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="100"/>
+            <rgb name="radiance" value="50"/>
         </emitter>
     </shape>
 
@@ -199,7 +167,7 @@
 	<bsdf type="twosided" id="disktex">
 		<bsdf type="diffuse" >
 			<texture type="bitmap" name="reflectance">
-				<string name="filename" value="textures/wood2.jpg"/>
+				<string name="filename" value="textures/stump.jpg"/>
 				<string name="wrap_mode" value="mirror"/>
 			</texture>
 		</bsdf>
@@ -208,8 +176,7 @@
     <!-- texture -->
 
     <!-- Shapes -->
-
-    <shape type="rectangle" id="floor">
+<shape type="rectangle" id="floor">
         <transform name="to_world">
             <scale value="15"/>
             <rotate x="1" angle="90"/>
@@ -232,21 +199,28 @@
         </transform>
         <ref id="white"/>
     </shape>
-    <shape type="rectangle" id = "green_wall">
+    <shape type="rectangle" id = "frontwall">
+        <transform name="to_world">
+            <scale value="15"/>
+            <translate x="0" y="0.0" z="15.0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+    <shape type="rectangle" id = "red_wall">
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="-90"/>
             <translate x="-15.0" y="0.0" z="0"/>
         </transform>
-        <ref id="green"/>
+        <ref id="red"/>
     </shape>
-     <shape type="rectangle" id = "red_wall">
+     <shape type="rectangle" id = "green_wall">
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="90"/>
-            <translate x="15.1" y="0.0" z="0"/>
+            <translate x="15.0" y="0.0" z="0"/>
         </transform>
-        <ref id="red"/>
+        <ref id="green"/>
     </shape>
 
     <shape type="cylinder">
@@ -267,8 +241,6 @@
 	</transform>
     <ref id="white"/>
 </shape>
-
-
     
     <!-- lego -->
     <shape type="ply">
