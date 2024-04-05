@@ -15,10 +15,10 @@
         <float name="near_clip" value="0.001"/>
         <float name="far_clip" value="200.0"/>
         <float name="focus_distance" value="1000"/>
-        <float name="fov" value="50"/>
+        <float name="fov" value="39.3077"/>
         <transform name="to_world">
-            <lookat origin="0, 0, 50"
-                    target="0, 0, 0"
+            <lookat origin="0, 10, 15"
+                    target="0, -9.74, 0"
                     up    ="0,  1,  0"/>
         </transform>
         <sampler type="independent">

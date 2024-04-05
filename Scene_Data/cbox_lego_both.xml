@@ -15,10 +15,10 @@
         <float name="near_clip" value="0.001"/>
         <float name="far_clip" value="200.0"/>
         <float name="focus_distance" value="1000"/>
-        <float name="fov" value="50"/>
+        <float name="fov" value="39.3077"/>
         <transform name="to_world">
-            <lookat origin="0, 0, 50"
-                    target="0, 0, 0"
+            <lookat origin="0, 10, 15"
+                    target="0, -9.74, 0"
                     up    ="0,  1,  0"/>
         </transform>
         <sampler type="independent">
@@ -91,17 +91,6 @@
 		</bsdf>
 	</bsdf>
     <!-- lego -->
-
-    <bsdf type="diffuse" id="gray">
-        <rgb name="reflectance" value="0.85, 0.85, 0.85"/>
-    </bsdf>
-    
-    <bsdf type ="twosided" id="white">
-        <bsdf type="diffuse">
-            <rgb name="reflectance" value="0.885809, 0.698859, 0.666422"/>
-        </bsdf>
-    </bsdf>
-
     <bsdf type="twosided" id="greenw">
         <bsdf type="diffuse">
 			<texture type="bitmap" name="reflectance">
@@ -140,15 +129,31 @@
 			</texture>
 		</bsdf>
     </bsdf>
-	<bsdf type="twosided" id="green">
+ <bsdf type="diffuse" id="gray">
+        <rgb name="reflectance" value="0.85, 0.85, 0.85"/>
+    </bsdf>
+    
+    <bsdf type ="twosided" id="white">
         <bsdf type="diffuse">
-            <rgb name="reflectance" value="0.105421, 0.37798, 0.076425"/>
+            <rgb name="reflectance" value="0.885809, 0.698859, 0.666422"/>
         </bsdf>
     </bsdf>
 
     <bsdf type="twosided" id="red">
         <bsdf type="diffuse">
-            <rgb name="reflectance" value="0.570068, 0.0430135, 0.0443706"/>
+            <rgb name="reflectance" value="0.885809, 0.0430135, 0.0443706"/>
+        </bsdf>
+    </bsdf>
+
+	<bsdf type="twosided" id="green">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.105421, 0.698859, 0.076425"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="twosided" id="blue">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.0430135, 0.0443706, 0.666422"/>
         </bsdf>
     </bsdf>
 
@@ -170,7 +175,7 @@
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="100"/>
+            <rgb name="radiance" value="50"/>
         </emitter>
     </shape>
   
@@ -183,7 +188,7 @@
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="100"/>
+            <rgb name="radiance" value="50"/>
         </emitter>
     </shape>
 
@@ -208,7 +213,6 @@
     <!-- texture -->
 
     <!-- Shapes -->
-
     <shape type="rectangle" id="floor">
         <transform name="to_world">
             <scale value="15"/>
@@ -232,21 +236,28 @@
         </transform>
         <ref id="white"/>
     </shape>
-    <shape type="rectangle" id = "green_wall">
+    <shape type="rectangle" id = "frontwall">
+        <transform name="to_world">
+            <scale value="15"/>
+            <translate x="0" y="0.0" z="15.0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+    <shape type="rectangle" id = "red_wall">
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="-90"/>
             <translate x="-15.0" y="0.0" z="0"/>
         </transform>
-        <ref id="green"/>
+        <ref id="red"/>
     </shape>
-     <shape type="rectangle" id = "red_wall">
+     <shape type="rectangle" id = "green_wall">
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="90"/>
-            <translate x="15.1" y="0.0" z="0"/>
+            <translate x="15.0" y="0.0" z="0"/>
         </transform>
-        <ref id="red"/>
+        <ref id="green"/>
     </shape>
 
     <shape type="cylinder">
