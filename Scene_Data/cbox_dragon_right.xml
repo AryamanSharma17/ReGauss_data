@@ -1,0 +1,388 @@
+<scene version="3.0.0">
+    <default name="spp" value="1024"/>
+    <default name="res_h" value="1080"/>
+    <default name="res_w" value="1920"/>
+    <default name="res" value="1024"/>
+    <default name="max_depth" value="10"/>
+    <default name="integrator" value="path"/>
+
+    <integrator type='$integrator'>
+        <integer name="max_depth" value="$max_depth"/>
+    </integrator>
+
+    <sensor type="perspective" id="sensor">
+        <string name="fov_axis" value="smaller"/>
+        <float name="near_clip" value="0.001"/>
+        <float name="far_clip" value="200.0"/>
+        <float name="focus_distance" value="1000"/>
+        <float name="fov" value="39.3077"/>
+        <transform name="to_world">
+            <lookat origin="0, 10, 15"
+                    target="0, -9.74, 0"
+                    up    ="0,  1,  0"/>
+        </transform>
+        <sampler type="independent">
+            <integer name="sample_count" value="$spp"/>
+        </sampler>
+        <film type="hdrfilm">
+            <integer name="width"  value="$res"/>
+            <integer name="height" value="$res"/>
+            <rfilter type="tent"/>
+            <string name="pixel_format" value="rgb"/>
+            <string name="component_format" value="float32"/>
+        </film>
+    </sensor>
+
+    <!-- BSDFs -->
+    
+    <!-- BSDFs -->
+    <!-- For the dragon -->
+    <bsdf type="twosided" id="GroundInnerBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.4, 0.3, 0.2" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="GroundOuterBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.2, 0.15, 0.1" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="ClothBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.456263, 0.456263, 0.456263" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="DragonBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.79311, 0.79311, 0.79311" />
+		</bsdf>
+	</bsdf>
+    <bsdf type="twosided" id="blackBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.0" />
+		</bsdf>
+	</bsdf>
+    <bsdf type="twosided" id="skinBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.6118, 0.8627, 0.9412" />
+		</bsdf>
+	</bsdf>
+    <bsdf type="twosided" id="scaleBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.3059, 0.66075, 0.8216" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="BladeBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.79311, 0.79311, 0.79311" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="SwordBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.79311, 0.79311, 0.79311" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="DecoBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.79311, 0.79311, 0.79311" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="DiamondBSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.79311, 0.79311, 0.79311" />
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="Deco2BSDF">
+		<bsdf type="diffuse">
+			<rgb name="reflectance" value="0.79311, 0.79311, 0.79311" />
+		</bsdf>
+	</bsdf>
+
+
+    <bsdf type="diffuse" id="gray">
+        <rgb name="reflectance" value="0.85, 0.85, 0.85"/>
+    </bsdf>
+    
+    <bsdf type ="twosided" id="white">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.885809, 0.698859, 0.666422"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="twosided" id="red">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.885809, 0.0430135, 0.0443706"/>
+        </bsdf>
+    </bsdf>
+
+	<bsdf type="twosided" id="green">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.105421, 0.698859, 0.076425"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="twosided" id="blue">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.0430135, 0.0443706, 0.666422"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="dielectric" id="glass"/>
+
+    <bsdf type="conductor" id="mirror"/>
+
+    <bsdf type="diffuse" id="base">
+        <rgb name="reflectance" value="0.6,0.6,0.6"/>
+    </bsdf>
+    
+    <!-- Light -->
+ 
+    <shape type="obj" id="light_right">
+        <string name="filename" value="meshes/cbox_luminaire.obj"/>
+        <transform name="to_world">
+            <translate x="1" y="0.5" z="1"/>
+            <scale value ="10"/>
+        </transform>
+        <ref id="white"/>
+        <emitter type="area">
+            <rgb name="radiance" value="50"/>
+        </emitter>
+    </shape>
+
+    <!-- texture -->
+	<bsdf type="twosided" id="cylindertex">
+		<bsdf type="diffuse">
+			<texture type="bitmap" name="reflectance">
+				<string name="filename" value="textures/birch.jpg"/>
+				<string name="wrap_mode" value="mirror"/>
+			</texture>
+		</bsdf>
+	</bsdf>
+	<bsdf type="twosided" id="disktex">
+		<bsdf type="diffuse" >
+			<texture type="bitmap" name="reflectance">
+				<string name="filename" value="textures/wood2.jpg"/>
+				<string name="wrap_mode" value="mirror"/>
+			</texture>
+		</bsdf>
+	</bsdf>
+    
+    <!-- texture -->
+
+    <!-- Shapes -->
+    <shape type="rectangle" id="floor">
+        <transform name="to_world">
+            <scale value="15"/>
+            <rotate x="1" angle="90"/>
+            <translate x="0" y="-15.0" z="0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+    <shape type="rectangle" id = "top">
+        <transform name="to_world">
+            <scale value="15"/>
+            <rotate x="1" angle="-90"/>
+            <translate x="0" y="15.0" z="0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+    <shape type="rectangle" id = "backwall">
+        <transform name="to_world">
+            <scale value="15"/>
+            <translate x="0" y="0.0" z="-15.0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+    <shape type="rectangle" id = "frontwall">
+        <transform name="to_world">
+            <scale value="15"/>
+            <translate x="0" y="0.0" z="15.0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+    <shape type="rectangle" id = "red_wall">
+        <transform name="to_world">
+            <scale value="15"/>
+            <rotate y="1" angle="-90"/>
+            <translate x="-15.0" y="0.0" z="0"/>
+        </transform>
+        <ref id="red"/>
+    </shape>
+     <shape type="rectangle" id = "green_wall">
+        <transform name="to_world">
+            <scale value="15"/>
+            <rotate y="1" angle="90"/>
+            <translate x="15.0" y="0.0" z="0"/>
+        </transform>
+        <ref id="green"/>
+    </shape>
+
+    <shape type="cylinder">
+		<float name="radius" value="0.3"/>
+		<transform name="to_world">
+            <scale value="5"/>
+			<rotate x="1" angle="90"/>
+			<translate x="0" y="-10.0" z="0"/>
+        </transform>
+		<ref id="cylindertex"/>
+	</shape>
+	<shape type="disk">
+	<boolean name="flip_normals" value="true"/>
+	<transform name="to_world">
+            <scale value="1.5"/>
+			<rotate x="1" angle="90"/>
+			<translate x="0" y="-10.0" z="0"/>
+	</transform>
+    <ref id="disktex"/>
+</shape>
+
+<!-- Dragon -->
+
+    <shape type="obj" id="GroundOuter_0001">
+		<string name="filename" value="meshes/dragon/models/Mesh011.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="GroundOuterBSDF" />
+	</shape>
+	<shape type="obj" id="Cloth">
+		<string name="filename" value="meshes/dragon/models/Mesh010.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="ClothBSDF" />
+	</shape>
+	<shape type="obj" id="GroundOuter_0002">
+		<string name="filename" value="meshes/dragon/models/Mesh005.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="GroundOuterBSDF" />
+	</shape>
+	<shape type="obj" id="GroundOuter_0003">
+		<string name="filename" value="meshes/dragon/models/Mesh006.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="GroundOuterBSDF" />
+	</shape>
+	<shape type="obj" id="GroundInner">
+		<string name="filename" value="meshes/dragon/models/Mesh012.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="GroundInnerBSDF" />
+	</shape>
+	<shape type="obj" id="GroundOuterBSDFGroundOuter_0004">
+		<string name="filename" value="meshes/dragon/models/Mesh007.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="GroundOuterBSDF" />
+	</shape>
+	<shape type="obj" id="Dragon_0001">
+		<string name="filename" value="meshes/dragon/models/Mesh008.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="skinBSDF" />
+	</shape>
+	<shape type="obj" id="Dragon_0002">
+		<string name="filename" value="meshes/dragon/models/Mesh013.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="scaleBSDF" />
+	</shape>
+	<shape type="obj" id="Dragon_0003">
+		<string name="filename" value="meshes/dragon/models/Mesh014.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="DragonBSDF" />
+	</shape>
+	<shape type="obj" id="Dragon_0004">
+		<string name="filename" value="meshes/dragon/models/Mesh015.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="DragonBSDF" />
+	</shape>
+	<shape type="obj" id="Blade">
+		<string name="filename" value="meshes/dragon/models/Mesh004.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="BladeBSDF" />
+	</shape>
+	<shape type="obj" id="Sword">
+		<string name="filename" value="meshes/dragon/models/Mesh009.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="SwordBSDF" />
+	</shape>
+	<shape type="obj" id="Deco">
+		<string name="filename" value="meshes/dragon/models/Mesh003.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="blackBSDF" />
+	</shape>
+	<shape type="obj" id="Diamond">
+		<string name="filename" value="meshes/dragon/models/Mesh002.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="DiamondBSDF" />
+	</shape>
+	<shape type="obj" id="Deco2_0001">
+		<string name="filename" value="meshes/dragon/models/Mesh001.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="Deco2BSDF" />
+	</shape>
+	<shape type="obj" id="Deco2_0002">
+		<string name="filename" value="meshes/dragon/models/Mesh000.obj" />
+		<transform name="to_world">
+            <scale value="0.1"/>
+            <rotate x="1" y="0" z="0" angle="0"/>
+            <translate x="0" y="-9.83" z="0.2"/>
+        </transform>
+		<ref id="Deco2BSDF" />
+	</shape>
+    <!-- Dragon -->
+
+
+</scene>
