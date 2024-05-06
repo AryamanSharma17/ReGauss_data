@@ -222,13 +222,13 @@
         </transform>
         <ref id="white"/>
     </shape>
-    <!-- <shape type="rectangle" id = "frontwall">
+    <shape type="rectangle" id = "frontwall">
         <transform name="to_world">
             <scale value="15"/>
-            <translate x="1.2" y="10.52" z="16.0"/>
+            <translate x="0" y="10.52" z="15.0"/>
         </transform>
         <ref id="white"/>
-    </shape> -->
+    </shape>
     <shape type="rectangle" id = "red_wall">
         <transform name="to_world">
             <scale value="15"/>

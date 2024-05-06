@@ -17,8 +17,8 @@
         <float name="focus_distance" value="1000"/>
         <float name="fov" value="39.3077"/>
         <transform name="to_world">
-            <lookat origin="0, 10, 15"
-                    target="0, -9.74, 0"
+            <lookat origin="0, 19.83, 15"
+                    target="0, 0, 0"
                     up    ="0,  1,  0"/>
         </transform>
         <sampler type="independent">
@@ -140,7 +140,7 @@
     <shape type="obj" id="light_left">
         <string name="filename" value="meshes/cbox_luminaire.obj"/>
         <transform name="to_world">
-            <translate x="-1" y="0.5" z="1"/>
+            <translate x="-0.8" y="1.482" z="0"/>
             <scale value ="10"/>
         </transform>
         <ref id="white"/>
@@ -174,7 +174,7 @@
         <transform name="to_world">
             <scale value="15"/>
             <rotate x="1" angle="90"/>
-            <translate x="0" y="-15.0" z="0"/>
+            <translate x="0" y="-5.17" z="0"/>
         </transform>
         <ref id="white"/>
     </shape>
@@ -182,21 +182,21 @@
         <transform name="to_world">
             <scale value="15"/>
             <rotate x="1" angle="-90"/>
-            <translate x="0" y="15.0" z="0"/>
+            <translate x="0" y="24.83" z="0"/>
         </transform>
         <ref id="white"/>
     </shape>
     <shape type="rectangle" id = "backwall">
         <transform name="to_world">
             <scale value="15"/>
-            <translate x="0" y="0.0" z="-15.0"/>
+            <translate x="0" y="9.83" z="-15.0"/>
         </transform>
         <ref id="white"/>
     </shape>
     <shape type="rectangle" id = "frontwall">
         <transform name="to_world">
             <scale value="15"/>
-            <translate x="0" y="0.0" z="15.0"/>
+            <translate x="0" y="9.83" z="15.0"/>
         </transform>
         <ref id="white"/>
     </shape>
@@ -204,7 +204,7 @@
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="-90"/>
-            <translate x="-15.0" y="0.0" z="0"/>
+            <translate x="-15.0" y="9.83" z="0"/>
         </transform>
         <ref id="red"/>
     </shape>
@@ -212,7 +212,7 @@
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="90"/>
-            <translate x="15.0" y="0.0" z="0"/>
+            <translate x="15.0" y="9.83" z="0"/>
         </transform>
         <ref id="green"/>
     </shape>
@@ -222,7 +222,7 @@
 		<transform name="to_world">
             <scale value="5"/>
 			<rotate x="1" angle="90"/>
-			<translate x="0" y="-10.0" z="0"/>
+			<translate x="0" y="-0.17" z="0"/>
         </transform>
 		<ref id="cylindertex"/>
 	</shape>
@@ -231,7 +231,7 @@
 	<transform name="to_world">
             <scale value="1.5"/>
 			<rotate x="1" angle="90"/>
-			<translate x="0" y="-10.0" z="0"/>
+			<translate x="0" y="-0.17" z="0"/>
 	</transform>
     <ref id="disktex"/>
 </shape>
@@ -243,7 +243,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="GroundOuterBSDF" />
 	</shape>
@@ -252,7 +252,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="ClothBSDF" />
 	</shape>
@@ -261,7 +261,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="GroundOuterBSDF" />
 	</shape>
@@ -270,7 +270,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="GroundOuterBSDF" />
 	</shape>
@@ -279,7 +279,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="GroundInnerBSDF" />
 	</shape>
@@ -288,7 +288,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="GroundOuterBSDF" />
 	</shape>
@@ -297,7 +297,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="skinBSDF" />
 	</shape>
@@ -306,7 +306,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="scaleBSDF" />
 	</shape>
@@ -315,7 +315,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="DragonBSDF" />
 	</shape>
@@ -324,7 +324,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="DragonBSDF" />
 	</shape>
@@ -333,7 +333,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="BladeBSDF" />
 	</shape>
@@ -342,7 +342,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="SwordBSDF" />
 	</shape>
@@ -351,7 +351,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="blackBSDF" />
 	</shape>
@@ -360,7 +360,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="DiamondBSDF" />
 	</shape>
@@ -369,7 +369,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="Deco2BSDF" />
 	</shape>
@@ -378,7 +378,7 @@
 		<transform name="to_world">
             <scale value="0.1"/>
             <rotate x="1" y="0" z="0" angle="0"/>
-            <translate x="0" y="-9.83" z="0.2"/>
+            <translate x="0" y="0" z="0"/>
         </transform>
 		<ref id="Deco2BSDF" />
 	</shape>
