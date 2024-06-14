@@ -17,8 +17,8 @@
         <float name="focus_distance" value="1000"/>
         <float name="fov" value="39.3077"/>
         <transform name="to_world">
-            <lookat origin="0, 10, 15"
-                    target="0, -9.74, 0"
+            <lookat origin="0, 10.02, 60"
+                    target="0, 10.02, 0"
                     up    ="0,  1,  0"/>
         </transform>
         <sampler type="independent">
@@ -91,8 +91,7 @@
 		</bsdf>
 	</bsdf>
     <!-- lego -->
-
-    <bsdf type="diffuse" id="gray">
+ <bsdf type="diffuse" id="gray">
         <rgb name="reflectance" value="0.85, 0.85, 0.85"/>
     </bsdf>
     
@@ -133,20 +132,19 @@
     <shape type="obj" id="light_left">
         <string name="filename" value="meshes/cbox_luminaire.obj"/>
         <transform name="to_world">
-            <translate x="-1" y="0.5" z="1"/>
-            <scale value ="10"/>
+            <translate x="-1.0" y="1.551" z="0"/>
+            <scale value ="5"/>
         </transform>
         <ref id="white"/>
         <emitter type="area">
-            <rgb name="radiance" value="50"/>
+            <rgb name="radiance" value="5"/>
         </emitter>
     </shape>
-  
-    
-    <shape type="obj" id="light_right">
+
+	<shape type="obj" id="light_right">
         <string name="filename" value="meshes/cbox_luminaire.obj"/>
         <transform name="to_world">
-            <translate x="1" y="0.5" z="1"/>
+            <translate x="0.8" y="1.551" z="0"/>
             <scale value ="10"/>
         </transform>
         <ref id="white"/>
@@ -167,7 +165,7 @@
 	<bsdf type="twosided" id="disktex">
 		<bsdf type="diffuse" >
 			<texture type="bitmap" name="reflectance">
-				<string name="filename" value="textures/stump.jpg"/>
+				<string name="filename" value="textures/wood2.jpg"/>
 				<string name="wrap_mode" value="mirror"/>
 			</texture>
 		</bsdf>
@@ -176,11 +174,11 @@
     <!-- texture -->
 
     <!-- Shapes -->
-<shape type="rectangle" id="floor">
+    <shape type="rectangle" id="floor">
         <transform name="to_world">
             <scale value="15"/>
             <rotate x="1" angle="90"/>
-            <translate x="0" y="-15.0" z="0"/>
+            <translate x="0" y="-4.48" z="0"/>
         </transform>
         <ref id="white"/>
     </shape>
@@ -188,21 +186,21 @@
         <transform name="to_world">
             <scale value="15"/>
             <rotate x="1" angle="-90"/>
-            <translate x="0" y="15.0" z="0"/>
+            <translate x="0" y="25.52" z="0"/>
         </transform>
         <ref id="white"/>
     </shape>
     <shape type="rectangle" id = "backwall">
         <transform name="to_world">
             <scale value="15"/>
-            <translate x="0" y="0.0" z="-15.0"/>
+            <translate x="0" y="10.52" z="-15.0"/>
         </transform>
         <ref id="white"/>
     </shape>
     <shape type="rectangle" id = "frontwall">
         <transform name="to_world">
             <scale value="15"/>
-            <translate x="0" y="0.0" z="15.0"/>
+            <translate x="0" y="10.52" z="15.0"/>
         </transform>
         <ref id="white"/>
     </shape>
@@ -210,7 +208,7 @@
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="-90"/>
-            <translate x="-15.0" y="0.0" z="0"/>
+            <translate x="-15" y="10.52" z="0"/>
         </transform>
         <ref id="red"/>
     </shape>
@@ -218,7 +216,7 @@
         <transform name="to_world">
             <scale value="15"/>
             <rotate y="1" angle="90"/>
-            <translate x="15.0" y="0.0" z="0"/>
+            <translate x="15" y="10.52" z="0"/>
         </transform>
         <ref id="green"/>
     </shape>
@@ -228,7 +226,7 @@
 		<transform name="to_world">
             <scale value="5"/>
 			<rotate x="1" angle="90"/>
-			<translate x="0" y="-10.0" z="0"/>
+			<translate x="1.2" y="0.52" z="1"/>
         </transform>
 		<ref id="white"/>
 	</shape>
@@ -237,7 +235,7 @@
 	<transform name="to_world">
             <scale value="1.5"/>
 			<rotate x="1" angle="90"/>
-			<translate x="0" y="-10.0" z="0"/>
+			<translate x="1.2" y="0.52" z="1"/>
 	</transform>
     <ref id="white"/>
 </shape>
@@ -247,7 +245,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinTransitionConnector_01_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -255,7 +253,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinTransitionConnector_01_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -263,7 +261,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinTransitionConnector_01_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -271,7 +269,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinTransitionConnector_01_02_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -279,7 +277,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_transparent_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-transparent" name="bsdf"/>
 	</shape>
@@ -287,7 +285,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_black_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -295,7 +293,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_black_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -303,7 +301,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_transparent_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-transparent" name="bsdf"/>
 	</shape>
@@ -311,7 +309,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_01_purple_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Red_Glass" name="bsdf"/>
 	</shape>
@@ -319,7 +317,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_01_purple_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Red_Glass" name="bsdf"/>
 	</shape>
@@ -327,7 +325,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_round_01_01_purple_glass_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Red_Glass" name="bsdf"/>
 	</shape>
@@ -335,7 +333,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_04_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -343,7 +341,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_04_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -351,7 +349,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_04_06_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -359,7 +357,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -367,7 +365,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -375,7 +373,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -383,7 +381,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_03_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -391,7 +389,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_round_01_01_black_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -399,7 +397,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_round_01_01_black_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -407,7 +405,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_04_06_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -415,7 +413,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_round_01_01_black_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -423,7 +421,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -431,7 +429,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_04_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -439,7 +437,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -447,7 +445,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -455,7 +453,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -463,7 +461,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -471,7 +469,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -479,7 +477,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -487,7 +485,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -495,7 +493,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -503,7 +501,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_6_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -511,7 +509,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -519,7 +517,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_6_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -527,7 +525,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -535,7 +533,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -543,7 +541,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_8_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -551,7 +549,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -559,7 +557,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -567,7 +565,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_022.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -575,7 +573,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_021.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -583,7 +581,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_020.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -591,7 +589,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_019.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -599,7 +597,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_018.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -607,7 +605,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_017.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -615,7 +613,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_016.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -623,7 +621,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_015.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -631,7 +629,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -639,7 +637,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -647,7 +645,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_014.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -655,7 +653,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -663,7 +661,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -671,7 +669,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_013.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -679,7 +677,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -687,7 +685,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -695,7 +693,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -703,7 +701,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -711,7 +709,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_012.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -719,7 +717,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -727,7 +725,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -735,7 +733,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -743,7 +741,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_04_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -751,7 +749,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_04_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -759,7 +757,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -767,7 +765,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_16_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -775,7 +773,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -783,7 +781,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_16_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -791,7 +789,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -799,7 +797,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -807,7 +805,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_gray_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -815,7 +813,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_black_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -823,7 +821,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_black_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -831,7 +829,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_gray_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -839,7 +837,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_gray_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -847,7 +845,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_black_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -855,7 +853,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_black_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -863,7 +861,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_gray_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -871,7 +869,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_gray_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -879,7 +877,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_gray_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -887,7 +885,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_black_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -895,7 +893,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_04_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -903,7 +901,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_02_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -911,7 +909,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -919,7 +917,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -927,7 +925,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -935,7 +933,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -943,7 +941,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -951,7 +949,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -959,7 +957,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -967,7 +965,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_04_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -975,7 +973,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_04_10_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -983,7 +981,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_04_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -991,7 +989,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_06_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -999,7 +997,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_02_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1007,7 +1005,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_06_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1015,7 +1013,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_04_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1023,7 +1021,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1031,7 +1029,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_06_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1039,7 +1037,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_06_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1047,7 +1045,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_06_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1055,7 +1053,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_06_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1063,7 +1061,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1071,7 +1069,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1079,7 +1077,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1087,7 +1085,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1095,7 +1093,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_08_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1103,7 +1101,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_02_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1111,7 +1109,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1119,7 +1117,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_04_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1127,7 +1125,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1135,7 +1133,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1143,7 +1141,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1151,7 +1149,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1159,7 +1157,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1167,7 +1165,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1175,7 +1173,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_08_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1183,7 +1181,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_08_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1191,7 +1189,7 @@
 		<string name="filename" value="meshes/lego/meshes/SlopeBrickInverted_02_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1199,7 +1197,7 @@
 		<string name="filename" value="meshes/lego/meshes/SlopeBrickInverted_02_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1207,7 +1205,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1215,7 +1213,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1223,7 +1221,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_01_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1231,7 +1229,7 @@
 		<string name="filename" value="meshes/lego/meshes/SlopeBrickInverted_02_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1239,7 +1237,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1247,7 +1245,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1255,7 +1253,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1263,7 +1261,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_12_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1271,7 +1269,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1279,7 +1277,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_04_10_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1287,7 +1285,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1295,7 +1293,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_12_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1303,7 +1301,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1311,7 +1309,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1319,7 +1317,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1327,7 +1325,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_16_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1335,7 +1333,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_16_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1343,7 +1341,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_16_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1351,7 +1349,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_16_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1359,7 +1357,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1367,7 +1365,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1375,7 +1373,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_8_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1383,7 +1381,7 @@
 		<string name="filename" value="meshes/lego/meshes/RubberBand_Left_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-RubberBand" name="bsdf"/>
 	</shape>
@@ -1391,7 +1389,7 @@
 		<string name="filename" value="meshes/lego/meshes/RubberBand_Left.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-RubberBand" name="bsdf"/>
 	</shape>
@@ -1399,7 +1397,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1407,7 +1405,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1415,7 +1413,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1423,7 +1421,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1431,7 +1429,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1439,7 +1437,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_04_12_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1447,7 +1445,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_04_12_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1455,7 +1453,7 @@
 		<string name="filename" value="meshes/lego/meshes/TipperEnd_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1463,7 +1461,7 @@
 		<string name="filename" value="meshes/lego/meshes/TipperEnd_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1471,7 +1469,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1479,7 +1477,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_06_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1487,7 +1485,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_06_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1495,7 +1493,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_04_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1503,7 +1501,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1511,7 +1509,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1519,7 +1517,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1527,7 +1525,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_030.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1535,7 +1533,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_029.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1543,7 +1541,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1551,7 +1549,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1559,7 +1557,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1567,7 +1565,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1575,7 +1573,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1583,7 +1581,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_8_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1591,7 +1589,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_038.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1599,7 +1597,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_037.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1607,7 +1605,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_024.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1615,7 +1613,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_023.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1623,7 +1621,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1631,7 +1629,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1639,7 +1637,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_022.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1647,7 +1645,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_021.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1655,7 +1653,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1663,7 +1661,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1671,7 +1669,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_034.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1679,7 +1677,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_033.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1687,7 +1685,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_036.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1695,7 +1693,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_020.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1703,7 +1701,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_019.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1711,7 +1709,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1719,7 +1717,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_035.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1727,7 +1725,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1735,7 +1733,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_018.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1743,7 +1741,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_017.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1751,7 +1749,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_032.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1759,7 +1757,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_031.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1767,7 +1765,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1775,7 +1773,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_04_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1783,7 +1781,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_013.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1791,7 +1789,7 @@
 		<string name="filename" value="meshes/lego/meshes/GearRack_01_04_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1799,7 +1797,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_012.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1807,7 +1805,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1815,7 +1813,7 @@
 		<string name="filename" value="meshes/lego/meshes/GearRack_01_04_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1823,7 +1821,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1831,7 +1829,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_04_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1839,7 +1837,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1847,7 +1845,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1855,7 +1853,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1863,7 +1861,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_06_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1871,7 +1869,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_12_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1879,7 +1877,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_040.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1887,7 +1885,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_12_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -1895,7 +1893,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_039.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1903,7 +1901,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_024.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1911,7 +1909,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_023.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1919,7 +1917,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_012.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1927,7 +1925,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1935,7 +1933,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1943,7 +1941,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -1951,7 +1949,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1959,7 +1957,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1967,7 +1965,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1975,7 +1973,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1983,7 +1981,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_028.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1991,7 +1989,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_027.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -1999,7 +1997,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_026.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2007,7 +2005,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_025.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2015,7 +2013,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_016.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2023,7 +2021,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_015.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2031,7 +2029,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_6_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2039,7 +2037,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_6_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2047,7 +2045,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_014.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2055,7 +2053,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicConnector_01_02_013.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2063,7 +2061,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_02_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -2071,7 +2069,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_08_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -2079,7 +2077,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_02_02_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -2087,7 +2085,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -2095,7 +2093,7 @@
 		<string name="filename" value="meshes/lego/meshes/GearRack_01_04_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2103,7 +2101,7 @@
 		<string name="filename" value="meshes/lego/meshes/GearRack_01_04_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2111,7 +2109,7 @@
 		<string name="filename" value="meshes/lego/meshes/GearRack_01_04_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2119,7 +2117,7 @@
 		<string name="filename" value="meshes/lego/meshes/GearRack_01_04_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2127,7 +2125,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -2135,7 +2133,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -2143,7 +2141,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_m_hole_01_02_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Yellow" name="bsdf"/>
 	</shape>
@@ -2151,7 +2149,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicPulleyLarge_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2159,7 +2157,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_08_Teeth_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2167,7 +2165,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2175,7 +2173,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2183,7 +2181,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2191,7 +2189,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_24_Teeth_rounded_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2199,7 +2197,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_08_Teeth_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2207,7 +2205,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicBush_01_01_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2215,7 +2213,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_08_Teeth_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2223,7 +2221,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_10_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2231,7 +2229,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_24_Teeth_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2239,7 +2237,7 @@
 		<string name="filename" value="meshes/lego/meshes/PinSmoothWithoutFrictionRidges_01_02_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2247,7 +2245,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2255,7 +2253,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_08_Teeth_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2263,7 +2261,7 @@
 		<string name="filename" value="meshes/lego/meshes/TechnicPulleyLarge_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2271,7 +2269,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_24_Teeth_rounded_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2279,7 +2277,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_4_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2287,7 +2285,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_08_Teeth_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2295,7 +2293,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_8_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2303,7 +2301,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_24_Teeth_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2311,7 +2309,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_08_Teeth_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2319,7 +2317,7 @@
 		<string name="filename" value="meshes/lego/meshes/Technic_axle_6_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2327,7 +2325,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_24_Teeth_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2335,7 +2333,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_08_Teeth_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2343,7 +2341,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_40_TeethLeftF.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2351,7 +2349,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_052.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2359,7 +2357,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_051.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2367,7 +2365,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_050.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2375,7 +2373,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_049.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2383,7 +2381,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_048.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2391,7 +2389,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_047.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2399,7 +2397,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_046.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2407,7 +2405,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_045.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2415,7 +2413,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_044.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2423,7 +2421,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_043.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2431,7 +2429,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_042.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2439,7 +2437,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_041.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2447,7 +2445,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_040.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2455,7 +2453,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_039.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2463,7 +2461,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_038.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2471,7 +2469,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_037.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2479,7 +2477,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_036.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2487,7 +2485,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_035.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2495,7 +2493,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_034.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2503,7 +2501,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_033.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2511,7 +2509,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_032.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2519,7 +2517,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_031.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2527,7 +2525,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_030.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2535,7 +2533,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_029.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2543,7 +2541,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_028.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2551,7 +2549,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_027.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2559,7 +2557,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_026.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2567,7 +2565,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_025.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2575,7 +2573,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_024.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2583,7 +2581,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_023.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2591,7 +2589,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_022.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2599,7 +2597,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_021.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2607,7 +2605,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_020.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2615,7 +2613,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_019.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2623,7 +2621,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_018.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2631,7 +2629,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_017.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2639,7 +2637,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_016.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2647,7 +2645,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_015.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2655,7 +2653,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_014.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2663,7 +2661,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_013.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2671,7 +2669,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_012.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2679,7 +2677,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2687,7 +2685,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2695,7 +2693,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2703,7 +2701,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2711,7 +2709,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2719,7 +2717,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2727,7 +2725,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2735,7 +2733,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2743,7 +2741,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2751,7 +2749,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2759,7 +2757,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_001.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2767,7 +2765,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_000.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2775,7 +2773,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_40_TeethLeftB.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -2783,7 +2781,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_105.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2791,7 +2789,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_104.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2799,7 +2797,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_103.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2807,7 +2805,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_102.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2815,7 +2813,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_101.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2823,7 +2821,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_100.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2831,7 +2829,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_099.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2839,7 +2837,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_098.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2847,7 +2845,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_097.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2855,7 +2853,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_096.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2863,7 +2861,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_095.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2871,7 +2869,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_094.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2879,7 +2877,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_093.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2887,7 +2885,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_092.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2895,7 +2893,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_091.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2903,7 +2901,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_090.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2911,7 +2909,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_089.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2919,7 +2917,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_088.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2927,7 +2925,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_087.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2935,7 +2933,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_086.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2943,7 +2941,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_085.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2951,7 +2949,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_084.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2959,7 +2957,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_083.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2967,7 +2965,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_082.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2975,7 +2973,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_081.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2983,7 +2981,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_080.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2991,7 +2989,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_079.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -2999,7 +2997,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_078.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3007,7 +3005,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_077.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3015,7 +3013,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_076.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3023,7 +3021,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_075.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3031,7 +3029,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_074.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3039,7 +3037,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_073.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3047,7 +3045,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_072.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3055,7 +3053,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_071.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3063,7 +3061,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_070.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3071,7 +3069,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_069.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3079,7 +3077,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_068.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3087,7 +3085,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_067.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3095,7 +3093,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_066.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3103,7 +3101,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_065.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3111,7 +3109,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_064.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3119,7 +3117,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_063.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3127,7 +3125,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_062.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3135,7 +3133,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_061.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3143,7 +3141,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_060.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3151,7 +3149,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_059.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3159,7 +3157,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_058.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3167,7 +3165,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_057.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3175,7 +3173,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_056.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3183,7 +3181,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_055.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3191,7 +3189,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_054.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3199,7 +3197,7 @@
 		<string name="filename" value="meshes/lego/meshes/ChainTreadLeft_053.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Black" name="bsdf"/>
 	</shape>
@@ -3207,7 +3205,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_40_TeethRightB.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -3215,7 +3213,7 @@
 		<string name="filename" value="meshes/lego/meshes/Gear_40_TeethRightF.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Gray" name="bsdf"/>
 	</shape>
@@ -3223,7 +3221,7 @@
 		<string name="filename" value="meshes/lego/meshes/LegoPlane_huge.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3231,7 +3229,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_038.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3239,7 +3237,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_022.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3247,7 +3245,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3255,7 +3253,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_021.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3263,7 +3261,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_020.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3271,7 +3269,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_019.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3279,7 +3277,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_018.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3287,7 +3285,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_017.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3295,7 +3293,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3303,7 +3301,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_037.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3311,7 +3309,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3319,7 +3317,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_016.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3327,7 +3325,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3335,7 +3333,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_036.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3343,7 +3341,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_035.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3351,7 +3349,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_034.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3359,7 +3357,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_033.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3367,7 +3365,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_015.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3375,7 +3373,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_032.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3383,7 +3381,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_031.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3391,7 +3389,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_030.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3399,7 +3397,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_029.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3407,7 +3405,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_028.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3415,7 +3413,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_027.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3423,7 +3421,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_026.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3431,7 +3429,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_025.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3439,7 +3437,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_024.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3447,7 +3445,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_023.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3455,7 +3453,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_08_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3463,7 +3461,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_08_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3471,7 +3469,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_06_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3479,7 +3477,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_06_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3487,7 +3485,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_022.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3495,7 +3493,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_021.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3503,7 +3501,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_020.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3511,7 +3509,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_014.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3519,7 +3517,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_019.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3527,7 +3525,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_018.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3535,7 +3533,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_017.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3543,7 +3541,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_016.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3551,7 +3549,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3559,7 +3557,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_013.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3567,7 +3565,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_02_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3575,7 +3573,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_015.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3583,7 +3581,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3591,7 +3589,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_012.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3599,7 +3597,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3607,7 +3605,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3615,7 +3613,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3623,7 +3621,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3631,7 +3629,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_04_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Brown" name="bsdf"/>
 	</shape>
@@ -3639,7 +3637,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_01_08_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Light_brown" name="bsdf"/>
 	</shape>
@@ -3647,7 +3645,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_m_flatTop_01_02_014.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3655,7 +3653,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_02_08_002.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3663,7 +3661,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_014.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3671,7 +3669,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_013.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3679,7 +3677,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_012.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3687,7 +3685,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_011.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3695,7 +3693,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_010.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3703,7 +3701,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_009.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3711,7 +3709,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_008.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3719,7 +3717,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_007.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3727,7 +3725,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_006.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3735,7 +3733,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_005.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3743,7 +3741,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_004.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>
@@ -3751,7 +3749,7 @@
 		<string name="filename" value="meshes/lego/meshes/Brick_flat_06_10_003.ply"/>
                 <transform name="to_world">
                         <scale value="2.5"/>
-						<translate x="-1.2" y="-10.52" z="-1"/>
+						<translate x="0" y="0" z="0"/>
                 </transform>
 		<ref id="mat-Sand" name="bsdf"/>
 	</shape>

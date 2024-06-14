@@ -17,8 +17,8 @@
         <float name="focus_distance" value="1000"/>
         <float name="fov" value="39.3077"/>
         <transform name="to_world">
-            <lookat origin="0, 10, 15"
-                    target="0, 0, 0"
+            <lookat origin="0, 10, 60"
+                    target="0, 10, 0"
                     up    ="0,  1,  0"/>
         </transform>
         <sampler type="independent">
@@ -167,30 +167,53 @@
     
     <!-- Light -->
 
-    <shape type="obj" id="light_left">
-        <string name="filename" value="meshes/cbox_luminaire.obj"/>
-        <transform name="to_world">
-            <translate x="-0.8" y="1.551" z="0"/>
-            <scale value ="10"/>
-        </transform>
-        <ref id="white"/>
-        <emitter type="area">
-            <rgb name="radiance" value="50"/>
-        </emitter>
-    </shape>
+    <shape type="obj" id="light_0">
+		<string name="filename" value="meshes/cbox_luminaire.obj"/>
+		<transform name="to_world">
+	            <translate x="-1.0" y="1.551" z="1.0"/>
+			<scale value ="10"/>
+		</transform>
+		<ref id="white"/>
+		<emitter type="area">
+			<rgb name="radiance" value="50"/>
+		</emitter>
+	</shape>
   
-    
-    <shape type="obj" id="light_right">
-        <string name="filename" value="meshes/cbox_luminaire.obj"/>
-        <transform name="to_world">
-            <translate x="0.8" y="1.551" z="0"/>
-            <scale value ="10"/>
-        </transform>
-        <ref id="white"/>
-        <emitter type="area">
-            <rgb name="radiance" value="50"/>
-        </emitter>
-    </shape>
+	<shape type="obj" id="light_1">
+		<string name="filename" value="meshes/cbox_luminaire.obj"/>
+		<transform name="to_world">
+			<translate x="-1.0"  y="1.551" z="-0.8"/>
+			<scale value ="10"/>
+		</transform>
+		<ref id="white"/>
+		<emitter type="area">
+			<rgb name="radiance" value="50"/>
+		</emitter>
+	</shape>
+
+	<shape type="obj" id="light_2">
+		<string name="filename" value="meshes/cbox_luminaire.obj"/>
+		<transform name="to_world">
+			<translate x="1.0"  y="1.551" z="-0.8"/>
+			<scale value ="10"/>
+		</transform>
+		<ref id="white"/>
+		<emitter type="area">
+			<rgb name="radiance" value="50"/>
+		</emitter>
+	</shape>
+
+	<shape type="obj" id="light_3">
+		<string name="filename" value="meshes/cbox_luminaire.obj"/>
+		<transform name="to_world">
+			<translate x="1.0"  y="1.551" z="1.0"/>
+			<scale value ="10"/>
+		</transform>
+		<ref id="white"/>
+		<emitter type="area">
+			<rgb name="radiance" value="50"/>
+		</emitter>
+	</shape>
 
     <!-- texture -->
 	<bsdf type="twosided" id="cylindertex">
