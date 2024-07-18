@@ -129,29 +129,17 @@
     
     <!-- Light -->
 
-    <shape type="obj" id="light_left">
-        <string name="filename" value="meshes/cbox_luminaire.obj"/>
-        <transform name="to_world">
-            <translate x="-1.0" y="1.551" z="0"/>
-            <scale value ="5"/>
-        </transform>
-        <ref id="white"/>
-        <emitter type="area">
-            <rgb name="radiance" value="5"/>
-        </emitter>
-    </shape>
-
-	<shape type="obj" id="light_right">
-        <string name="filename" value="meshes/cbox_luminaire.obj"/>
-        <transform name="to_world">
-            <translate x="0.8" y="1.551" z="0"/>
-            <scale value ="10"/>
-        </transform>
-        <ref id="white"/>
-        <emitter type="area">
-            <rgb name="radiance" value="50"/>
-        </emitter>
-    </shape>
+    <shape type="obj" id="light_0">
+		<string name="filename" value="meshes/cbox_luminaire.obj"/>
+		<transform name="to_world">
+	            <translate x="-1.0" y="1.482" z="1.0"/>
+			<scale value ="10"/>
+		</transform>
+		<ref id="white"/>
+		<emitter type="area">
+			<rgb name="radiance" value="50"/>
+		</emitter>
+	</shape>
 
     <!-- texture -->
 	<bsdf type="twosided" id="cylindertex">
@@ -197,13 +185,13 @@
         </transform>
         <ref id="white"/>
     </shape>
-    <shape type="rectangle" id = "frontwall">
+    <!-- <shape type="rectangle" id = "frontwall">
         <transform name="to_world">
             <scale value="15"/>
             <translate x="0" y="10.52" z="15.0"/>
         </transform>
         <ref id="white"/>
-    </shape>
+    </shape> -->
     <shape type="rectangle" id = "red_wall">
         <transform name="to_world">
             <scale value="15"/>
